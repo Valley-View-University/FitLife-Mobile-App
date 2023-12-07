@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:fitness/common/colo_extension.dart';
+import 'package:fitness/view/login/login_view.dart';
 import 'package:fitness/view/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -60,7 +61,8 @@ class _StartedViewState extends State<StartedView> {
                   top: 20,
                   left:50,right: 30 ),
                 child: Container(
-                  child: Image(
+                  alignment: Alignment.center,
+                  child: const Image(
                     image: AssetImage("assets/img/complete_profile.png")),
                 ),
               ),
@@ -68,10 +70,12 @@ class _StartedViewState extends State<StartedView> {
               SafeArea(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: TextButton(onPressed: () {},
+                  child: TextButton(onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: ((context) =>  LoginView()) ));
+                  },
                   style: ButtonStyle(
                     shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius:BorderRadius.circular(30) )),
-                    padding: MaterialStatePropertyAll(EdgeInsets.only(top:20,bottom: 20,left: 70,right: 70)),
+                    padding: MaterialStatePropertyAll(EdgeInsets.only(top:20,bottom: 20,left: 100,right: 100)),
                     backgroundColor: MaterialStatePropertyAll(Colors.white),
                   ),
                   child: Text(
