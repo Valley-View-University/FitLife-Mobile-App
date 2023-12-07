@@ -1,8 +1,12 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:fitness/common/colo_extension.dart';
 import 'package:fitness/view/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../common_widget/round_button.dart';
+
 
 class StartedView extends StatefulWidget {
   const StartedView({super.key});
@@ -22,57 +26,67 @@ class _StartedViewState extends State<StartedView> {
       body: Container(
           width: media.width,
           decoration: BoxDecoration(
-            gradient: isChangeColor
-                ? LinearGradient(
-                    colors: TColor.primaryG,
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight)
-                : null,
-          ),
+           color: Color(0xB792A3FD),),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          
             children: [
-              const Spacer(),
-              Text(
-                "Fitness",
-                style: TextStyle(
-                    color: TColor.black,
-                    fontSize: 36,
-                    fontWeight: FontWeight.w700),
+              
+              Padding(
+                padding: const EdgeInsets.all(28.0),
+                child: Text(
+              'Welcome to FitLife.',
+              style: GoogleFonts.aleo(
+                color: Colors.white,
+                fontSize: 64,
+                fontWeight: FontWeight.w400,
+              )
               ),
-              Text(
-                "Everybody Can Train",
-                style: TextStyle(
-                  color: TColor.gray,
-                  fontSize: 18,
+              ),
+
+              SizedBox(
+                width: 293,
+                height: 69,
+                child: Text(
+                  "Achieve your fitness goals with personalized meal plans and exercises.",
+                  style: GoogleFonts.aldrich(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 20,
+                  left:50,right: 30 ),
+                child: Container(
+                  child: Image(
+                    image: AssetImage("assets/img/complete_profile.png")),
                 ),
               ),
               const Spacer(),
               SafeArea(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: RoundButton(
-                    title: "Get Started",
-                    type: isChangeColor
-                        ? RoundButtonType.textGradient
-                        : RoundButtonType.bgGradient,
-                    onPressed: () {
-                      if (isChangeColor) {
-                        //GO Next Screen
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const OnBoardingView()));
-                      } else {
-                        //Change Color
-                        setState(() {
-                          isChangeColor = true;
-                        });
-                      }
-                    },
+                  child: TextButton(onPressed: () {},
+                  style: ButtonStyle(
+                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius:BorderRadius.circular(30) )),
+                    padding: MaterialStatePropertyAll(EdgeInsets.only(top:20,bottom: 20,left: 70,right: 70)),
+                    backgroundColor: MaterialStatePropertyAll(Colors.white),
                   ),
+                  child: Text(
+                    "Get Started",
+                    style: GoogleFonts.poppins(
+                    color: Color(0xFF92A3FD),
+                    fontWeight: FontWeight.w700,
+
+                    ),
+                  ),
+
+                  )
                 ),
-              )
+              ),
+             const Spacer()
             ],
           )),
     );
