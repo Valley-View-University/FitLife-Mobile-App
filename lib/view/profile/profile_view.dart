@@ -96,7 +96,10 @@ class _ProfileViewState extends State<ProfileView> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
+
                           "Zephaniah Ollennu",
+                      
+
                           style: TextStyle(
                             color: TColor.black,
                             fontSize: 14,
