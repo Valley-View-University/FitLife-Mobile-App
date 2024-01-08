@@ -120,7 +120,6 @@ class _HomeViewState extends State<HomeView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 20.0,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -161,7 +160,7 @@ class _HomeViewState extends State<HomeView> {
                   height: media.width * 0.05,
                 ),
                 Container(
-                  height: media.width * 0.45,
+                  height: media.width * 0.4,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: TColor.primaryG),
                       borderRadius: BorderRadius.circular(media.width * 0.075)),

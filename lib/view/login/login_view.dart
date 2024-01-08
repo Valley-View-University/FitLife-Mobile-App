@@ -4,6 +4,7 @@ import 'package:fitness/common_widget/round_textfield.dart';
 import 'package:fitness/view/home/home_view.dart';
 import 'package:fitness/view/login/complete_profile_view.dart';
 import 'package:fitness/view/login/signup_view.dart';
+import 'package:fitness/view/main_tab/main_tab_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -105,7 +106,7 @@ class _LoginViewState extends State<LoginView> {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  const HomeView()));
+                                  const MainTabView()));
                     }),
                 SizedBox(
                   height: media.width * 0.04,
